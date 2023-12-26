@@ -1,0 +1,215 @@
+@charset 'utf-8';
+
+/* 웹폰트 정의 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@font-face {
+  font-family: 'Jalnan';
+  src: url('../fonts/JalnanOTF.woff2') format('woff2'), url('JalnanOTF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  font-size: 62.5%; /*10px*/
+  --main-color-light: #5c8eff;
+  --main-color: #004dff;
+  --main-color-dark: #111441;
+
+  --sub-color-1: #a201ff;
+  --sub-color-2: #fe504f;
+  --sub-color-3: #ff9841;
+
+  --bg-light: #f5f5f5;
+
+  --text-color: #333333;
+}
+
+::selection {
+  background: var(--main-color);
+  color: #fff;
+}
+
+/* 스크롤 이동상황에서 부드럽게 움직임 */
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+hr,
+.hidden {
+  position: absolute;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+label,
+button {
+  /* cup, 버튼 위에서는 커서가 손가락 모양으로 바뀌게하는 명령*/
+  cursor: pointer;
+}
+
+body {
+  font: 1rem/1.5 'Montserrat', 'pretendard', sans-serif;
+
+  color: var(--text-color);
+  /* overflow-x: hidden; */
+  word-break: keep-all; /* 글자단위 줄바꿈 */
+  text-transform: capitalize; /* 첫글자 대문자 표시 */
+}
+
+.inner {
+  width: 118rem;
+  margin: 0 auto;
+  height: 100%;
+  background: #ff5;
+}
+#header .inner,
+#footer .inner {
+  width: 164.4rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* s: header */
+#header {
+  position: fixed;
+  width: 100%;
+  margin-top: 2.2rem;
+}
+nav {
+  width: 100%;
+  display: flex;
+  gap: 3.4rem;
+}
+.logo a {
+  width: 26.8rem;
+  height: 7.4rem;
+  border-radius: 4rem;
+  background: var(--bg-light);
+  padding: 0 3.4rem;
+
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+}
+.logo strong {
+  width: 4rem;
+  height: 4rem;
+}
+.logo-title p {
+  font-family: 'pretendard';
+  line-height: 100%;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+.logo-title p + p {
+  margin-top: 4px;
+  font-size: 1.2rem;
+  color: var(--main-color-light);
+}
+.menu {
+  width: 134.2rem;
+  height: 7.4rem;
+  border-radius: 4rem;
+  background: var(--bg-light);
+  padding: 0 3.4rem;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 3rem;
+}
+.gnb {
+  display: flex;
+}
+.gnb li a {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--text-color);
+
+  padding: 2rem;
+}
+.btn-contact {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #fff;
+
+  width: 13.4rem;
+  height: 4.6rem;
+  border-radius: 4rem;
+  background: var(--main-color);
+}
+/* e: header */
+
+/* s: go-top */
+.go-top {
+  position: fixed;
+  bottom: 4.2rem;
+  right: 4.4rem;
+  width: 6.8rem;
+  height: 6.8rem;
+  border-radius: 50%;
+  background: var(--main-color-dark) url(../img/go-top.svg) no-repeat 50%;
+  box-shadow: 0px 7px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* e: go-top */
+
+/* s: footer */
+#footer {
+  background: var(--main-color-dark);
+  color: #fff;
+  padding: 11rem 0 7.6rem;
+}
+.foot-logo {
+  font-size: 8rem;
+  font-weight: 800;
+  color: #fff;
+}
+.foot-contact strong {
+  font-weight: 700;
+  font-size: 4.4rem;
+}
+.contact-info {
+  margin-top: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+.addr {
+  font-family: pretendard;
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+.btn-copy {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.4rem;
+  border: 2px solid #090b2e;
+  background: var(--main-color-dark) url(../img/btn-copy-img.svg) no-repeat 50%;
+}
+.btn-copy:hover {
+  background-color: #090b2e;
+}
+/* e: footer */
