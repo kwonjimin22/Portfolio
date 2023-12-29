@@ -26,6 +26,7 @@
   display: flex;
   gap: 1.4rem;
 }
+
 .tab-menu li a {
   display: flex;
   justify-content: center;
@@ -40,8 +41,14 @@
   font-size: 2rem;
 }
 
-/* tab-con */
-.tab-con {
+.tab-menu li.on a {
+  color: #fff;
+  font-weight: 600;
+  background: var(--main-color);
+}
+
+/* tab-con-wrap*/
+.tab-con-wrap {
   margin-top: 4.8rem;
 }
 
@@ -90,7 +97,7 @@
   /* display: none; */
 
   position: absolute;
-  bottom: -22.6rem; /* 움직임용 */
+  bottom: -60%; /* 움직임용 */
   left: 0;
 
   background: #fff;
@@ -242,20 +249,12 @@
   grid-row-gap: 2.8rem;
 }
 
+/* 탭메뉴 동작에 필요한 부분 */
+.tab-con.hide {
+  display: none;
+}
+
 /* s : 코딩용으로 잠깐 사용, 삭제예정 */
-.item-graphic:hover .con-info,
-.item-project:hover .con-info {
-  display: block;
-}
-.tab-con-all {
-  /* display: none; */
-}
-.tab-con-project {
-  display: none;
-}
-.tab-con-graphic {
-  display: none;
-}
 /* e : 코딩용으로 잠깐 사용, 삭제예정 */
 
 /* e : portfolio-tab */
