@@ -62,7 +62,7 @@ button {
 }
 
 body {
-  font: 1rem/1.5 'Montserrat', 'pretendard', sans-serif;
+  font: 1rem/1.5 'Montserrat', 'Pretendard', sans-serif;
 
   color: var(--text-color);
   /* overflow-x: hidden; */
@@ -74,7 +74,7 @@ body {
   width: 118rem;
   margin: 0 auto;
   height: 100%;
-  background: #ff5;
+  /* background: #ff5; */
 }
 #header .inner,
 #footer .inner {
@@ -88,6 +88,7 @@ body {
 /* s: header */
 #header {
   position: fixed;
+  z-index: 999;
   width: 100%;
   margin-top: 2.2rem;
 }
@@ -112,7 +113,7 @@ nav {
   height: 4rem;
 }
 .logo-title p {
-  font-family: 'pretendard';
+  font-family: 'Pretendard';
   line-height: 100%;
   font-weight: 400;
   font-size: 1.8rem;
@@ -173,6 +174,8 @@ nav {
 
 /* s: footer */
 #footer {
+  margin-top: 16.4rem;
+
   background: var(--main-color-dark);
   color: #fff;
   padding: 11rem 0 7.6rem;
@@ -194,7 +197,7 @@ nav {
   gap: 1.8rem;
 }
 .addr {
-  font-family: pretendard;
+  font-family: 'Pretendard';
   font-size: 2.2rem;
   font-weight: 700;
 

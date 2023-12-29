@@ -9,7 +9,7 @@
   align-items: center;
 }
 .visual-title {
-  font-family: "Jalnan";
+  font-family: 'Jalnan';
   line-height: 140%;
   font-size: 10rem;
   text-align: center;
@@ -19,8 +19,8 @@
 }
 .visual-title strong {
   display: inline-block;
-  margin-top: -20px;
-  margin-right: 10px;
+  margin-top: -2rem;
+  margin-right: 1rem;
   width: 50rem;
   height: 14rem;
   overflow: hidden;
@@ -42,7 +42,7 @@
 
 /* s : motto */
 .motto {
-  margin-top: 13.8rem;
+  padding: 18.4rem 0 4.8rem 0;
 }
 .motto-text {
   display: flex;
@@ -50,7 +50,6 @@
   align-items: end;
 }
 .motto-text h3 {
-  font-family: "Montserrat";
   font-weight: 600;
   font-size: 8rem;
 }
@@ -72,15 +71,73 @@
 
 /* s : main-content */
 .main-content {
-  margin-top: 15.4rem;
+  padding: 11.4rem 0 4.8rem 0;
 }
 .main-content h3 {
-  font-family: "Montserrat";
-  font-weight: 600;
+  font-weight: 700;
   font-size: 6rem;
 }
 .main_content_wrap {
+  margin-top: 4.8rem;
   display: grid;
-  grid-template-columns: 30% 30%;
+  grid-template-columns: 78rem 38rem;
+  grid-template-rows: repeat(3, 24rem);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2.8rem;
+  grid-template-areas:
+    'a c'
+    'a d'
+    'b d';
+}
+
+.main_content_wrap li {
+  border-radius: 2rem;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.main_content_wrap li figure {
+  width: 100%;
+  height: 100%;
+}
+.main_content_wrap li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main_content_wrap li strong {
+  display: block;
+  width: 20rem;
+  height: 6.4rem;
+  border-radius: 4rem;
+  background: #fff;
+
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  right: 2rem;
+  bottom: 2.8rem;
+}
+
+.con1 {
+  grid-area: a;
+}
+.con2 {
+  grid-area: b;
+}
+.con3 {
+  grid-area: c;
+}
+.con4 {
+  grid-area: d;
 }
 /* e : main-content */
