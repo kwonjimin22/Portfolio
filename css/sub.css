@@ -1,26 +1,38 @@
 @charset 'utf-8';
-
-/* s : portfolio-title */
-.portfolio {
-  padding: 19rem 0 4.8rem 0;
+/* 공동정의 */
+.sub-title {
+  padding: 19rem 0 9rem 0;
 }
-.portfolio-title h2 {
+.sub-title h2 {
   font-weight: 700;
   font-size: 6rem;
 }
-.portfolio-title strong {
+.sub-title strong {
   margin-top: 2rem;
 
   font-weight: 400;
   font-size: 5rem;
 }
+h3 {
+  font-weight: 500;
+  font-size: 5rem;
+}
+h3 strong {
+  font-weight: 700;
+}
+h3 strong b {
+  display: block;
+}
+
+/* portfolio페이지 */
+/* s : portfolio-title */
+.portfolio {
+  padding: 0 0 4.8rem 0;
+}
+
 /* e : portfolio-title */
 
 /* s : portfolio-tab */
-.portfolio-tab {
-  margin-top: 9rem;
-}
-
 /* tab-menu */
 .tab-menu {
   display: flex;
@@ -253,8 +265,265 @@
 .tab-con.hide {
   display: none;
 }
-
-/* s : 코딩용으로 잠깐 사용, 삭제예정 */
-/* e : 코딩용으로 잠깐 사용, 삭제예정 */
-
 /* e : portfolio-tab */
+
+/* about페이지 */
+/* about페이지, 공통명령 */
+.about-keyword {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.2rem;
+  row-gap: 3.4rem;
+}
+.about-keyword span {
+  font-size: 2.8rem;
+  font-weight: 400;
+
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  padding: 2rem 3.2rem;
+  border-radius: 6rem;
+}
+
+/* s: my-info */
+.info-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.info-con1 p {
+  font-weight: 600;
+  font-size: 3rem;
+}
+.info-con1 strong {
+  font-size: 5rem;
+}
+.info-con1 strong + p {
+  font-size: 2rem;
+}
+
+.info-con2 {
+  margin-top: 8.2rem;
+}
+.info-con2 p {
+  margin-top: 0.6rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.info-con3 {
+  margin-top: 6.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.info-con3 li {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+/* 임시 */
+.info-con3 li img {
+  width: 100%;
+  height: 100%;
+}
+
+.info-img figure {
+  width: 50rem;
+  height: 50rem;
+
+  /* 임시 */
+  overflow: hidden;
+}
+/* 임시 */
+.info-con3 figure img {
+  width: 100%;
+  height: 100%;
+}
+/* e: my-info */
+
+/* s: all-keyword */
+.all-keyword {
+  padding: 41.2rem 0 16.2rem 0;
+}
+.all-keyword h3 {
+  text-align: center;
+}
+.all-keyword .about-keyword {
+  margin: 0 auto;
+  margin-top: 6.8rem;
+
+  width: 152rem;
+  justify-content: center;
+}
+.all-keyword .about-keyword span {
+  transition: 0.4s;
+}
+/* all-keyword영역에서 키워드 호버 시 */
+.all-keyword .about-keyword span:hover {
+  font-weight: 700;
+  color: #fff;
+  background: var(--main-color);
+  cursor: pointer;
+  box-shadow: 0px 7px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* e: all-keyword */
+
+/* s: my-motto */
+.my-motto {
+  padding: 16.2rem 0 15.6rem 0;
+}
+.my-motto-title h3 {
+  margin-top: 2.8rem;
+}
+.my-motto-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-motto figure {
+  width: 50rem;
+  height: 31.8rem;
+  border-radius: 4rem;
+  overflow: hidden;
+}
+/* 임시 */
+.my-motto figure img {
+  width: 100%;
+  height: 100%;
+}
+/* e: my-motto */
+
+/* s: uiux-studies */
+.uiux-studies {
+  padding: 15.6rem 0 7.5rem 0;
+}
+.uiux-studies h3 {
+  text-align: center;
+}
+.uiux-studies .about-keyword {
+  margin-top: 3.6rem;
+  justify-content: center;
+}
+.uiux-project {
+  margin-top: 7.4rem;
+
+  display: flex;
+  gap: 2.3rem;
+}
+.uiux-project-con {
+  position: relative;
+}
+.uiux-project-con figure {
+  width: 37.7rem;
+  height: 60.6rem;
+  border-radius: 4rem;
+  overflow: hidden;
+}
+/* 임시 */
+.uiux-project-con figure img {
+  width: 100%;
+  height: 100%;
+}
+.project-con-title {
+  position: absolute;
+  left: 4.4rem;
+  bottom: 5.4rem;
+}
+.project-con-title strong {
+  font-weight: 600;
+  font-size: 3rem;
+}
+.project-con-title p {
+  margin-top: 1.4rem;
+  font-weight: 500;
+  font-size: 2rem;
+}
+/* e: uiux-studies */
+
+/* s: team-interviews */
+.team-interviews {
+  padding: 7.5rem 0 10.8rem 0;
+}
+.team-interviews .about-keyword {
+  margin-top: 1.8rem;
+}
+.interviews-con {
+  position: relative;
+  margin-top: 4.8rem;
+
+  background: #a201ff;
+  width: 118rem;
+  height: 76.2rem;
+  border-radius: 2rem;
+}
+.interviews-con strong {
+  position: absolute;
+  top: 18.8rem;
+  left: 8rem;
+
+  display: block;
+  width: 35rem;
+
+  color: #fff;
+  font-weight: 600;
+  font-size: 5rem;
+}
+.interviews-text-wrap {
+  height: 160%;
+  width: 60%;
+
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  /* background: #f00; */
+}
+
+.interviews-text {
+  width: 50rem;
+  height: 22.6rem;
+  border-radius: 2rem;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 활성화된 상태 */
+.interviews-text.swiper-slide-active {
+  width: 60rem;
+  height: 28.8rem;
+}
+
+/* e: team-interviews */
+
+/* s: passion-for-work */
+
+.passion-for-work {
+  margin-top: 7.5rem;
+
+  width: 100%;
+  height: 68.6rem;
+  background: var(--main-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.passion-for-work .about-keyword {
+  display: none;
+}
+.passion-for-work-con {
+  font-size: 5rem;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.1);
+}
+.passion-for-work-con p.active {
+  color: #fff;
+}
+/* e: passion-for-work */

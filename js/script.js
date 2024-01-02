@@ -24,4 +24,14 @@ $(function () {
     $tabcontent.eq(index).removeClass('hide');
   }
   // e : Portfolio 탭메뉴 설정
+
+  // about 스와이퍼
+  const interviewsSwiper = new Swiper('.interviews-con', {
+    // Optional parameters
+    direction: 'vertical',
+    autoplay: true,
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+  });
 });
