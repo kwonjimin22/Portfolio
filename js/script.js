@@ -33,5 +33,6 @@ $(function () {
     loop: true,
     slidesPerView: 3,
     spaceBetween: 30,
+    centeredSlides: true,
   });
 });

@@ -8,9 +8,26 @@
     <title>jimin | 핵심을 고민하다</title>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css"
+      integrity="sha512-q54FvbV+gGBn+NvgaD4gpJ7w4wrO00DgW7Rx503PIhrf0CuMwLOwbS+bXgOBFSob+6GVy1HDPfaRLJ8w2jiS4g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/main.css" />
-    <script src="./script.js"></script>
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"
+      integrity="sha512-bxzECOBohzcTcWocMAlNDE2kYs0QgwGs4eD8TlAN2vfovq13kfDfp95sJSZrNpt0VMkpP93ZxLC/+WN/7Trw2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
+    <script src="./js/main-visual.js"></script>
+    <!-- <script src="./js/script.js"></script> -->
   </head>
   <body>
     <header id="header">
@@ -39,19 +56,19 @@
 
     <hr />
 
-    <main id="container">
-      <section class="visual-1">
+    <main id="fullpage-container">
+      <section class="section visual-1">
         <h2 class="visual-title">
           <b>디자인에서</b><strong><img src="./img/keyword-img.png" alt="" /></strong>을 고민하다.
         </h2>
       </section>
 
-      <section class="visual-2">
+      <section class="section visual-2">
+        <div class="keyword-box"></div>
         <h2 class="visual-title">디자인을 <i>고민</i>하다.</h2>
-        <div class="text-box"></div>
       </section>
 
-      <section class="motto">
+      <section class="section motto">
         <div class="inner">
           <div class="motto-text">
             <h3>더 나은 <b>디자인을 위해</b> <b>고민합니다.</b></h3>
@@ -66,7 +83,7 @@
         </div>
       </section>
 
-      <section class="main-content">
+      <section class="section main-content">
         <div class="inner">
           <h3>한눈에 보는 모든 컨텐츠</h3>
           <ul class="main_content_wrap">

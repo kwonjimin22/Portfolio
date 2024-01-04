@@ -1,117 +1,125 @@
 $(function () {
-  // index, 메인비주얼 플러그인
-  var Engine = Matter.Engine,
-    Render = Matter.Render,
-    Events = Matter.Events,
-    MouseConstraint = Matter.MouseConstraint,
-    Mouse = Matter.Mouse,
-    World = Matter.World,
-    Bodies = Matter.Bodies;
+  // 메인비주얼 - 키워드
+  // Matter.js module aliases
+  const { Engine, Render, Runner, Bodies, World } = Matter;
 
-  // create an engine
-  var engine = Engine.create(),
-    world = engine.world;
+  function runMatterAnimation() {
+    // Create an engine
+    const engine = Engine.create();
 
-  // create a renderer
-  var render = Render.create({
-    element: document.body,
-    engine: engine,
-    options: {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      pixelRatio: 2,
-      background: '#080808',
-      wireframes: false,
+    // Get the .view element
+    const viewElement = document.querySelector('.keyword-box');
+
+    // Create a renderer within the .view element
+    const render = Render.create({
+      element: viewElement,
+      engine: engine,
+      options: {
+        width: viewElement.clientWidth, // Set width based on .view element size
+        height: viewElement.clientHeight, // Set height based on .view element size
+        background: 'transparent',
+        wireframes: false, // Set to true for wireframe view
+      },
+    });
+
+    // Create a runner
+    const runner = Runner.create();
+
+    // Add the runner to the engine
+    Runner.run(runner, engine);
+
+    // Create an array to hold the falling images
+    const fallingImages = [];
+
+    // Load images with filenames
+    const imageFilenames = Array.from({ length: 16 }, (_, index) => `img/visual-item/visual-item${index + 1}.png`);
+
+    // Function to load images and create falling images with original sizes
+    const createFallingImage = (imageUrl, index) => {
+      const img = new Image();
+      img.onload = function () {
+        const angle = Math.random() * Math.PI * 2; // Random angle in radians
+        const fallingImage = Bodies.rectangle(
+          Math.random() * viewElement.clientWidth, // Adjusted initial horizontal position
+          Math.random() * -400, // Adjusted initial vertical position
+          img.width,
+          img.height,
+          {
+            render: {
+              sprite: {
+                texture: img.src,
+              },
+            },
+            restitution: 0.8, // Adjust restitution to control bouncing (0 = no bouncing, 1 = full bouncing)
+            friction: 0.7, // Adjust friction to control sliding on the ground
+            angle: angle, // Set the initial rotation angle
+            angularVelocity: 0.2 * (Math.random() - 0.5), // Random angular velocity for rotation
+          }
+        );
+        fallingImages.push(fallingImage);
+
+        if (index === imageFilenames.length - 1) {
+          // All images loaded, add them to the world
+          World.add(engine.world, fallingImages);
+        }
+      };
+      img.src = imageUrl;
+    };
+
+    // Add walls to prevent images from leaving the screen
+    const wallOptions = { isStatic: true, render: { visible: true, opacity: 0 } };
+    World.add(engine.world, [
+      Bodies.rectangle(viewElement.clientWidth / 2, viewElement.clientHeight, viewElement.clientWidth, 10, wallOptions), // Bottom wall
+      Bodies.rectangle(
+        viewElement.clientWidth,
+        viewElement.clientHeight / 2,
+        10,
+        viewElement.clientHeight,
+        wallOptions
+      ), // Right wall
+      Bodies.rectangle(0, viewElement.clientHeight / 2, 10, viewElement.clientHeight, wallOptions), // Left wall
+    ]);
+
+    // Set gravity to control falling speed
+    engine.world.gravity.y = 1.6; // Higher values increase gravity and cause objects to fall faster
+
+    // Stagger the creation of falling images with a delay
+    imageFilenames.forEach((imageUrl, index) => {
+      setTimeout(() => {
+        createFallingImage(imageUrl, index);
+      }, index * 100); // Adjust the delay (500 milliseconds)
+    });
+
+    // Run the engine
+    Matter.Runner.run(runner, engine);
+
+    // Run the renderer
+    Render.run(render);
+  }
+
+  // 메인비주얼 - 풀스크린
+  $('#fullpage-container').fullpage({
+    anchors: ['visual-1', 'visual-2', 'motto', 'main-content'],
+
+    // 스크롤바 생성되게
+    // scrollBar: true,
+    // scrollingSpeed: 1400,
+
+    // 영역에 로딩이 되고 나서
+    afterLoad: function (anchorLink, index) {
+      var loadedSection = $(this);
+      console.log('로딩된 후 : ' + anchorLink, index, loadedSection);
+
+      if (anchorLink === 'visual-2') {
+        runMatterAnimation();
+      }
+
+      // // 세번째 영역,네번째 영역에서는 자동 스크롤 취소
+      // if (anchorLink === 'motto' || anchorLink === 'main-content') {
+      //   $.fn.fullpage.setAutoScrolling(false);
+      // } else {
+      //   $.fn.fullpage.setAutoScrolling(true);
+      // }
     },
-  });
-
-  // create bounds
-  var ground = Bodies.rectangle(window.innerWidth / 2 + 160, window.innerHeight + 80, window.innerWidth + 320, 160, {
-    render: { fillStyle: '#080808' },
-    isStatic: true,
-  });
-  var wallLeft = Bodies.rectangle(-80, window.innerHeight / 2, 160, window.innerHeight, { isStatic: true });
-  var wallRight = Bodies.rectangle(window.innerWidth + 80, window.innerHeight / 2, 160, 1200, { isStatic: true });
-  var roof = Bodies.rectangle(window.innerWidth / 2 + 160, -80, window.innerWidth + 320, 160, { isStatic: true });
-
-  // object colors & variables
-  var arts = '#EDDC8C';
-  var videos = '#B3E8F3';
-  var abouts = '#4D4D4D';
-
-  var border = 2;
-  var radius = 20;
-
-  // create objects
-
-  // art & design
-  var illustration = Bodies.rectangle(70, 500, 133, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/RADmiFI.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var art = Bodies.rectangle(35, 460, 56, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/NwQqeng.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var threeD = Bodies.rectangle(90, 460, 52, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/ptUWXgO.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var graphic = Bodies.rectangle(60, 420, 105, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/TyOmVtt.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var photo = Bodies.rectangle(50, 380, 86, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/tc3MsJP.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  // video
-  var documentary = Bodies.rectangle(220, 540, 165, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/QYNTBNr.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var animation = Bodies.rectangle(200, 490, 128, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/rSnEY9Q.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var vintage = Bodies.rectangle(190, 440, 104, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/5BSBvSm.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var short = Bodies.rectangle(170, 390, 82, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/VEyrikN.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  //misc
-  var website = Bodies.rectangle(360, 420, 108, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/hr9p4uV.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var article = Bodies.rectangle(300, 380, 92, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/n6TV7XG.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var music = Bodies.rectangle(400, 360, 86, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/dax8MwT.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var star = Bodies.rectangle(80, 260, 42, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/C2qPMbB.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  //about
-  var about = Bodies.rectangle(230, 140, 87, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/4gPcZVN.png', xScale: 0.5, yScale: 0.5 } },
-  });
-  var instagram = Bodies.rectangle(320, 180, 40, 40, {
-    id: 'instagramBody',
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/RStSwfG.png', xScale: 0.5, yScale: 0.5 } },
-    url: 'https://www.instagram.com/fuse.blog/',
-  });
-  var random = Bodies.rectangle(230, 180, 112, 40, {
-    chamfer: { radius: radius },
-    render: { sprite: { texture: 'https://i.imgur.com/YS51eIC.png', xScale: 0.5, yScale: 0.5 } },
   });
 });
