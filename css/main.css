@@ -26,12 +26,13 @@
 }
 .visual-title strong {
   display: inline-block;
-  margin-top: -2rem;
+  margin-top: -4rem;
   margin-right: 1rem;
-  width: 50rem;
-  height: 14rem;
+  width: 52rem;
+  height: 16rem;
   overflow: hidden;
 }
+
 /* e : visual-1 */
 
 /* s : visual-2 */
@@ -95,11 +96,12 @@
   height: auto;
 }
 .main-content h3 {
+  margin-top: 6rem;
   font-weight: 700;
   font-size: 6rem;
 }
 .main_content_wrap {
-  margin-top: 4.8rem;
+  margin-top: 3.8rem;
   display: grid;
   grid-template-columns: 78rem 38rem;
   grid-template-rows: repeat(3, 24rem);

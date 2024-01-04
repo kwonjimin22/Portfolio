@@ -99,23 +99,31 @@ $(function () {
 
   // 메인비주얼 - 풀스크린
   const $header = $('#header');
+  $header.hide();
 
   $('#fullpage-container').fullpage({
     anchors: ['visual-1', 'visual-2', 'motto', 'main-content'],
+
+    scrollingSpeed: 1400,
+
+    fixedElements: '#footer',
+
+    verticalCentered: false,
+
+    autoScrolling: true,
+    fitToSection: true,
+    fitToSectionDelay: 300,
+    scrollOverflow: true,
 
     // 영역에 로딩이 되고 나서
     afterLoad: function (anchorLink, index) {
       var loadedSection = $(this);
       console.log('로딩된 후 : ' + anchorLink, index, loadedSection);
 
+      // 두번째 영역에 들어가면 키워드 이벤트 시작
       if (anchorLink === 'visual-2') {
         runMatterAnimation();
       }
-      if (anchorLink === 'motto') {
-        $header.fadeIn();
-      }
     },
   });
-
-  $header.hide();
 });

@@ -1,4 +1,16 @@
 $(function () {
+  // 헤더 설정
+  const $header = $('#header');
+  const $window = $(window);
+
+  $window.on('wheel', function (e) {
+    if (e.originalEvent.wheelDelta > 0) {
+      $header.removeClass('hide');
+    } else {
+      $header.addClass('hide');
+    }
+  });
+
   // Portfolio, 탭메뉴 변수
   const $tabMenu = $('.tab-menu > li');
   const $tabcontent = $('.tab-con');

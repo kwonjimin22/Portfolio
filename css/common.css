@@ -88,9 +88,13 @@ body {
 /* s: header */
 #header {
   position: fixed;
+  top: 2.2rem;
+  left: 0;
   z-index: 999;
   width: 100%;
-  margin-top: 2.2rem;
+}
+#header.hide {
+  top: -100px;
 }
 nav {
   width: 100%;
