@@ -98,12 +98,10 @@ $(function () {
   }
 
   // 메인비주얼 - 풀스크린
+  const $header = $('#header');
+
   $('#fullpage-container').fullpage({
     anchors: ['visual-1', 'visual-2', 'motto', 'main-content'],
-
-    // 스크롤바 생성되게
-    // scrollBar: true,
-    // scrollingSpeed: 1400,
 
     // 영역에 로딩이 되고 나서
     afterLoad: function (anchorLink, index) {
@@ -113,13 +111,11 @@ $(function () {
       if (anchorLink === 'visual-2') {
         runMatterAnimation();
       }
-
-      // // 세번째 영역,네번째 영역에서는 자동 스크롤 취소
-      // if (anchorLink === 'motto' || anchorLink === 'main-content') {
-      //   $.fn.fullpage.setAutoScrolling(false);
-      // } else {
-      //   $.fn.fullpage.setAutoScrolling(true);
-      // }
+      if (anchorLink === 'motto') {
+        $header.fadeIn();
+      }
     },
   });
+
+  $header.hide();
 });

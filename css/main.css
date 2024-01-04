@@ -57,7 +57,10 @@
 
 /* s : motto */
 .motto {
-  padding: 18.4rem 0 4.8rem 0;
+  height: 100vh;
+}
+.motto .inner {
+  height: auto;
 }
 .motto-text {
   display: flex;
@@ -86,7 +89,10 @@
 
 /* s : main-content */
 .main-content {
-  padding: 11.4rem 0 4.8rem 0;
+  height: 100vh;
+}
+.main-content .inner {
+  height: auto;
 }
 .main-content h3 {
   font-weight: 700;
@@ -101,8 +107,8 @@
   grid-row-gap: 2.8rem;
   grid-template-areas:
     'a c'
-    'a d'
-    'b d';
+    'a c'
+    'b c';
 }
 
 .main_content_wrap li {
@@ -151,8 +157,5 @@
 }
 .con3 {
   grid-area: c;
-}
-.con4 {
-  grid-area: d;
 }
 /* e : main-content */
