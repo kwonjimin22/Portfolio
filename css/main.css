@@ -32,6 +32,17 @@
   height: 16rem;
   overflow: hidden;
 }
+.visual-title strong img {
+  width: 100%;
+  /* 가상요소로 넣자ㅎㅎ / 애니메이션 찾아서 넣어볼까? */
+  animation: Keyword-ani 2s infinite steps(4); /* 가지고 있는 이미지 갯수 */
+}
+
+@keyframes Keyword-ani {
+  to {
+    transform: translateY(-98%); /* 이미지 전체의 크기 */
+  }
+}
 
 /* e : visual-1 */
 
