@@ -1,5 +1,5 @@
 $(function () {
-  // Portfolio 탭메뉴 변수
+  // Portfolio, 탭메뉴 변수
   const $tabMenu = $('.tab-menu > li');
   const $tabcontent = $('.tab-con');
 
@@ -25,8 +25,8 @@ $(function () {
   }
   // e : Portfolio 탭메뉴 설정
 
-  // about 스와이퍼
-  const interviewsSwiper = new Swiper('.interviews-con', {
+  // about, 스와이퍼
+  const interviewsSwiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'vertical',
     autoplay: true,

@@ -447,43 +447,48 @@ h3 strong b {
 .team-interviews {
   padding: 7.5rem 0 10.8rem 0;
 }
+
 .team-interviews .about-keyword {
   margin-top: 1.8rem;
 }
-.interviews-con {
-  position: relative;
+
+.interviews-content {
   margin-top: 4.8rem;
 
   background: #a201ff;
-  width: 118rem;
+  width: 100%;
   height: 76.2rem;
   border-radius: 2rem;
-}
-.interviews-con strong {
-  position: absolute;
-  top: 18.8rem;
-  left: 8rem;
 
-  display: block;
-  width: 35rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* align-items: center; */
+
+  padding: 3rem;
+}
+.interviews-text {
+  display: flex;
+  justify-content: center;
+}
+.interviews-text strong {
+  margin-top: 18.8rem;
 
   color: #fff;
   font-weight: 600;
   font-size: 5rem;
+  text-align: center;
 }
-.interviews-text-wrap {
-  height: 160%;
-  width: 60%;
-
-  margin-left: auto;
-
-  display: flex;
-  align-items: center;
-
-  /* background: #f00; */
+.interviews-slider {
+  padding: 20px 0;
 }
+.interviews-slider .swiper {
+  width: 100%;
+  height: 100%;
+}
+.interviews-slider .swiper-slide {
+  margin: 0 auto;
 
-.interviews-text {
   width: 50rem;
   height: 22.6rem;
   border-radius: 2rem;
@@ -494,7 +499,7 @@ h3 strong b {
   align-items: center;
 }
 /* 활성화된 상태 */
-.interviews-text.swiper-slide-active {
+.interviews-slider .swiper-slide.swiper-slide-active {
   width: 60rem;
   height: 28.8rem;
 }
@@ -507,7 +512,8 @@ h3 strong b {
   margin-top: 7.5rem;
 
   width: 100%;
-  height: 68.6rem;
+  /* height: 68.6rem; 아래 패딩으로 구현*/
+  padding: 12.8rem;
   background: var(--main-color);
 
   display: flex;
