@@ -71,6 +71,18 @@
 .motto-text h3 {
   font-weight: 600;
   font-size: 8rem;
+  line-height: 130%;
+  position: relative;
+}
+.motto-text h3::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -1rem;
+  left: 22rem;
+  width: 10rem;
+  height: 10rem;
+  background: url(../img/core-img.svg) no-repeat 50% / 90%;
 }
 .motto-text p {
   font-size: 3rem;
@@ -99,6 +111,15 @@
   margin-top: 6rem;
   font-weight: 700;
   font-size: 6rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.main-content h3::before {
+  content: '';
+  width: 10rem;
+  height: 10rem;
+  background: url(../img/main-content-title-img.svg) no-repeat 50% / 90%;
 }
 .main_content_wrap {
   margin-top: 3.8rem;

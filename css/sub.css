@@ -6,6 +6,22 @@
 .sub-title h2 {
   font-weight: 700;
   font-size: 6rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.sub-title h2::before {
+  content: '';
+  width: 10rem;
+  height: 10rem;
+  background: no-repeat 50% / 80%;
+}
+
+.about-title.sub-title h2::before {
+  background-image: url(../img/about-title-img.svg);
+}
+.sub-title.portfolio-title h2::before {
+  background-image: url(../img/portfolio-title-img.svg);
 }
 .sub-title strong {
   margin-top: 2rem;

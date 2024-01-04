@@ -106,15 +106,6 @@ $(function () {
 
     scrollingSpeed: 1400,
 
-    fixedElements: '#footer',
-
-    verticalCentered: false,
-
-    autoScrolling: true,
-    fitToSection: true,
-    fitToSectionDelay: 300,
-    scrollOverflow: true,
-
     // 영역에 로딩이 되고 나서
     afterLoad: function (anchorLink, index) {
       var loadedSection = $(this);
@@ -124,6 +115,19 @@ $(function () {
       if (anchorLink === 'visual-2') {
         runMatterAnimation();
       }
+
+      // 두번째 영역에 들어가면 키워드 이벤트 시작
+      if (index === 3) {
+        $header.fadeIn();
+      } else {
+        $header.fadeOut();
+      }
+    },
+
+    // 영역에서 떠날 때
+    onLeave: function (index, nextIndex, direction) {
+      var leavingSection = $(this);
+      console.log('영역에서 떠날 때 : ' + index, nextIndex, direction, leavingSection);
     },
   });
 });
