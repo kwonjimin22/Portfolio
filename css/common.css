@@ -90,7 +90,7 @@ body {
   position: fixed;
   top: 2.2rem;
   left: 0;
-  z-index: 999;
+  z-index: 10;
   width: 100%;
 }
 #header.hide {
@@ -129,6 +129,8 @@ nav {
   color: var(--main-color-light);
 }
 .menu {
+  position: relative;
+
   width: 134.2rem;
   height: 7.4rem;
   border-radius: 4rem;
@@ -161,6 +163,70 @@ nav {
   border-radius: 4rem;
   background: var(--main-color-dark);
 }
+
+/* contact 내용 */
+.contact-con {
+  position: absolute;
+  bottom: -21.6rem;
+  right: 0;
+
+  width: 32rem;
+  height: 20rem;
+  border-radius: 2rem;
+  padding: 1.4rem 2.2rem;
+
+  background: var(--bg-light);
+}
+
+.contact-name {
+  font-weight: 700;
+  font-size: 2rem;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.contact-name::before {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  background: url(../img/logo-img.png) no-repeat 50% / 90%;
+}
+
+.contact-info-wrap {
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+  width: calc(100% - 6px);
+
+  border-radius: 0 0 2rem 2rem;
+
+  padding: 2rem 1.7rem;
+  background: #fff;
+}
+.contact-addr + .contact-addr {
+  margin-top: 1rem;
+}
+.contact-addr {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-addr .btn-copy {
+  border: none;
+  background-color: var(--bg-light);
+  background-image: url(../img/btn-copy-icon-dark.svg);
+}
+
+.contact-addr .btn-copy:hover {
+  background-color: #cccccc;
+}
 /* e: header */
 
 /* s: go-top */
@@ -177,6 +243,16 @@ nav {
 /* e: go-top */
 
 /* s: footer */
+
+/* main푸터, margin-top대용 */
+.main-content {
+  padding-bottom: 3rem;
+}
+#fullpage-container #footer {
+  margin-top: 0;
+  padding: 11rem 0 7.6rem;
+}
+
 #footer {
   margin-top: 16.4rem;
 
@@ -214,7 +290,7 @@ nav {
   height: 4rem;
   border-radius: 1.4rem;
   border: 2px solid #090b2e;
-  background: var(--main-color-dark) url(../img/btn-copy-img.svg) no-repeat 50%;
+  background: var(--main-color-dark) url(../img/btn-copy-icon.svg) no-repeat 50%;
 }
 .btn-copy:hover {
   background-color: #090b2e;

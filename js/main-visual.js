@@ -1,4 +1,16 @@
 $(function () {
+  setTimeout(function () {}, 3000);
+
+  gsap.to('.visual-1', {
+    yPercent: -100,
+    duration: 1,
+    ease: 'power4.inOut',
+    delay: 3,
+    onComplete: () => {
+      runMatterAnimation();
+    },
+  });
+
   // 메인비주얼 - 키워드
   // Matter.js module aliases
   const { Engine, Render, Runner, Bodies, World } = Matter;
@@ -87,7 +99,7 @@ $(function () {
     imageFilenames.forEach((imageUrl, index) => {
       setTimeout(() => {
         createFallingImage(imageUrl, index);
-      }, index * 100); // Adjust the delay (500 milliseconds)
+      }, index * 50); // Adjust the delay (500 milliseconds)
     });
 
     // Run the engine
@@ -99,10 +111,9 @@ $(function () {
 
   // 메인비주얼 - 풀스크린
   const $header = $('#header');
-  $header.hide();
 
   $('#fullpage-container').fullpage({
-    anchors: ['visual-1', 'visual-2', 'motto', 'main-content'],
+    anchors: ['visual-2', 'motto', 'main-content'],
 
     scrollingSpeed: 1400,
 
@@ -110,24 +121,6 @@ $(function () {
     afterLoad: function (anchorLink, index) {
       var loadedSection = $(this);
       console.log('로딩된 후 : ' + anchorLink, index, loadedSection);
-
-      // 두번째 영역에 들어가면 키워드 이벤트 시작
-      if (anchorLink === 'visual-2') {
-        runMatterAnimation();
-      }
-
-      // 두번째 영역에 들어가면 키워드 이벤트 시작
-      if (index === 3) {
-        $header.fadeIn();
-      } else {
-        $header.fadeOut();
-      }
-    },
-
-    // 영역에서 떠날 때
-    onLeave: function (index, nextIndex, direction) {
-      var leavingSection = $(this);
-      console.log('영역에서 떠날 때 : ' + index, nextIndex, direction, leavingSection);
     },
   });
 });

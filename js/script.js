@@ -1,5 +1,7 @@
 $(function () {
-  // 헤더 설정
+  /* ************************
+   * 헤더 설정
+   ************************ */
   const $header = $('#header');
   const $window = $(window);
 
@@ -11,11 +13,12 @@ $(function () {
     }
   });
 
-  // Portfolio, 탭메뉴 변수
+  /* ************************
+   * Portfolio, 탭메뉴
+   ************************ */
   const $tabMenu = $('.tab-menu > li');
   const $tabcontent = $('.tab-con');
 
-  // s : Portfolio 탭메뉴 설정
   // 초기 세팅
   tabAction(0);
 
@@ -35,9 +38,69 @@ $(function () {
     $tabcontent.addClass('hide');
     $tabcontent.eq(index).removeClass('hide');
   }
-  // e : Portfolio 탭메뉴 설정
 
-  // about, 스와이퍼
+  /* ************************
+   * Portfolio, 팝업창 + 웹이동
+   ************************ */
+  const $dim = $('.dim');
+  const $popup = $('.popup');
+  const $galleryContent = $('.gallery-content');
+  const $btnClose = $('.btn-close');
+  const $viewBtn = $('.tab-con .more-btn.view-btn'); /* 그래픽작업물 버튼 */
+  const $processBtn = $('.tab-con .more-btn.process-btn'); /* 프로세스작업물 버튼 */
+  const $designBtn = $('.tab-con .more-btn.design-btn'); /* 디자인작업물 버튼 */
+
+  function showPopup() {
+    $header.css('z-index', 1);
+
+    $dim.fadeIn();
+    $popup.addClass('active');
+  }
+
+  function hidePopup() {
+    $dim.fadeOut();
+    $popup.removeClass('active');
+
+    // $galleryContent 초기화
+    $galleryContent.html('');
+    $popup.css('width', '');
+  }
+
+  // $viewBtn ,$processBtn 누르면 팝업열기
+  $viewBtn.on('click', function () {
+    showPopup();
+
+    // 부모 중 .item-graphic를 찾아서 자식인 figure img에 접근
+    const $target = $(this).closest('.item-graphic').find('figure img');
+    const imgSrc = $target.attr('src');
+
+    $galleryContent.html(`<img src="${imgSrc}">`);
+  });
+  $processBtn.on('click', function () {
+    showPopup();
+
+    // 부모 중 .item-project를 찾아서 자식인 figure img에 접근
+    const $target = $(this).closest('.item-project').find('figure img');
+    const imgSrc = $target.data('prosess');
+
+    $galleryContent.html(`<img src="${imgSrc}">`);
+  });
+
+  // $btnClose, $dim 누르면 팝업닫기
+  $btnClose.on('click', hidePopup);
+  $dim.on('click', hidePopup);
+
+  // $designBtn 누르면 웹이동
+  $designBtn.on('click', function () {
+    const webLink = $(this).data('link');
+    console.log($(this).data('link'));
+
+    window.open(webLink, '_blank');
+  });
+
+  /* ************************
+   * about, 스와이퍼
+   ************************ */
   const interviewsSwiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'vertical',

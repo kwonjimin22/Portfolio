@@ -26,7 +26,10 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.17.1/matter.min.js"></script>
-    <!-- <script src="./js/script.js"></script> -->
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="./js/script.js"></script>
     <script src="./js/main-visual.js"></script>
   </head>
   <body>
@@ -44,7 +47,7 @@
           </h1>
           <div class="menu">
             <ul class="gnb">
-              <li><a href="#">Processes</a></li>
+              <li><a href="processes.html">Processes</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
             </ul>
@@ -57,12 +60,11 @@
     <hr />
 
     <main id="fullpage-container">
-      <section class="section visual-1">
+      <section class="visual-1">
         <h2 class="visual-title">
           <b>디자인에서</b><strong><img src="./img/keyword-img.png" alt="" /></strong>을 고민하다.
         </h2>
       </section>
-
       <section class="section visual-2">
         <div class="keyword-box"></div>
         <h2 class="visual-title">디자인을 <i>고민</i>하다.</h2>
@@ -101,28 +103,27 @@
           </ul>
         </div>
       </section>
-    </main>
-
-    <hr />
-
-    <footer id="footer">
-      <div class="inner">
-        <strong class="foot-logo">jimin</strong>
-        <div class="foot-contact">
-          <strong>CONTACT</strong>
-          <div class="contact-info">
-            <div class="addr">
-              <p>010 - 9012 - 4899</p>
-              <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
-            </div>
-            <div class="addr">
-              <p>jimin00study@gmail.com</p>
-              <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+      <footer id="footer" class="section fp-auto-height">
+        <div class="inner">
+          <strong class="foot-logo">jimin</strong>
+          <div class="foot-contact">
+            <strong>CONTACT</strong>
+            <div class="contact-info">
+              <div class="addr">
+                <p>010 - 9012 - 4899</p>
+                <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+              </div>
+              <div class="addr">
+                <p>jimin00study@gmail.com</p>
+                <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </main>
+
+    <hr />
 
     <a href="#top" class="go-top"><i class="hidden">TOP</i></a>
   </body>
