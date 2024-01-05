@@ -110,17 +110,9 @@ $(function () {
   }
 
   // 메인비주얼 - 풀스크린
-  const $header = $('#header');
-
   $('#fullpage-container').fullpage({
     anchors: ['visual-2', 'motto', 'main-content'],
 
-    scrollingSpeed: 1400,
-
-    // 영역에 로딩이 되고 나서
-    afterLoad: function (anchorLink, index) {
-      var loadedSection = $(this);
-      console.log('로딩된 후 : ' + anchorLink, index, loadedSection);
-    },
+    scrollingSpeed: 1000,
   });
 });

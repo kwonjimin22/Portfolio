@@ -165,7 +165,12 @@ nav {
 }
 
 /* contact 내용 */
+.contact-con.active {
+  display: block;
+}
 .contact-con {
+  display: none;
+
   position: absolute;
   bottom: -21.6rem;
   right: 0;
