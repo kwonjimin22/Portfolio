@@ -2,10 +2,9 @@ $(function () {
   setTimeout(function () {}, 3000);
 
   gsap.to('.visual-1', {
-    yPercent: -100,
-    duration: 1,
-    ease: 'power4.inOut',
     delay: 1.4,
+    opacity: 0,
+    ease: 'power4.inOut',
     onComplete: () => {
       runMatterAnimation();
     },

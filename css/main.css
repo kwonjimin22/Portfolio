@@ -31,7 +31,7 @@
 }
 .visual-title strong {
   display: inline-block;
-  margin-top: -4rem;
+  margin-top: -3rem;
   margin-right: 1rem;
   width: 52rem;
   height: 16rem;
@@ -45,7 +45,7 @@
 
 @keyframes Keyword-ani {
   to {
-    transform: translateY(-98%); /* 이미지 전체의 크기 */
+    transform: translateY(-64rem); /* 이미지 전체의 크기 */
   }
 }
 
@@ -107,6 +107,9 @@
 
 .motto-text b {
   display: block;
+}
+.motto-img {
+  margin-top: 6rem;
 }
 .motto-img figure {
   width: 118rem;

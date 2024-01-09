@@ -92,6 +92,7 @@ body {
   left: 0;
   z-index: 10;
   width: 100%;
+  transition: 0.4s;
 }
 #header.hide {
   top: -100px;
