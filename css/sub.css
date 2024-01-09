@@ -11,7 +11,7 @@
   align-items: center;
 }
 .sub-title h2::before {
-  content: "";
+  content: '';
   width: 10rem;
   height: 10rem;
   background: no-repeat 50% / 80%;
@@ -258,7 +258,7 @@ h3 strong b {
   transition: 0.4s;
 }
 .more-btn a::after {
-  content: "";
+  content: '';
   display: block;
 
   width: 3.8rem;
@@ -266,7 +266,7 @@ h3 strong b {
   background: url(../img/arrow.svg) no-repeat 50%;
 }
 .more-btn::after {
-  content: "";
+  content: '';
   display: block;
   width: 3.8rem;
   height: 3.8rem;
@@ -363,7 +363,7 @@ h3 strong b {
   align-items: end;
 }
 .info-wrap::after {
-  content: "";
+  content: '';
   position: absolute;
   z-index: -1;
   top: 439px;
@@ -619,11 +619,12 @@ h3 strong b {
 /* e: team-interviews */
 
 /* s: passion-for-work */
+
 #passion-for-work {
   margin-top: 7.5rem;
-
-  width: 100%;
   /* height: 68.6rem; 아래 패딩으로 구현*/
+  width: 100%;
+
   padding: 12.8rem;
   background: var(--main-color);
 
