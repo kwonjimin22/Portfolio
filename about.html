@@ -14,6 +14,7 @@
     <!-- swiper 필수 파일  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/swiper.js"></script>
   </head>
 
   <body>
@@ -32,7 +33,7 @@
           <div class="menu">
             <ul class="gnb">
               <li><a href="processes.html">Processes</a></li>
-              <li><a href="about.html">About</a></li>
+              <li class="active"><a href="about.html">About</a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
             </ul>
             <button type="button" class="btn-contact">CONTACT</button>
@@ -60,7 +61,7 @@
       <div class="sub-title about-title">
         <div class="inner">
           <h2>ABOUT</h2>
-          <strong>Lorem ipsum, dolor sit amet consecteat?</strong>
+          <strong>키워드를 통해 저를 소개합니다!</strong>
         </div>
       </div>
 
@@ -79,19 +80,18 @@
                 <p>jimin00study@gmail.com</p>
               </div>
               <ul class="info-con3">
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
-                <li><img src="./img/임시이미지.png" alt="" /></li>
+                <li><img src="./img/ps-icon.svg" alt="" /></li>
+                <li><img src="./img/ai-icon.svg" alt="" /></li>
+                <li><img src="./img/figma-icon.svg" alt="" /></li>
+                <li><img src="./img/html-icon.svg " alt="" /></li>
+                <li><img src="./img/css-icon.svg" alt="" /></li>
+                <li><img src="./img/js-icoon.svg" alt="" /></li>
+                <li><img src="./img/jquery-icon.svg" alt="" /></li>
+                <li><img src="./img/github-icon.svg" alt="" /></li>
               </ul>
             </div>
             <div class="info-img">
-              <figure><img src="./img/임시이미지.png" alt="" /></figure>
+              <figure><img src="./img/about-my-img.png" alt="" /></figure>
             </div>
           </div>
         </div>
@@ -100,24 +100,24 @@
       <section class="all-keyword">
         <h3>
           <strong><b>키워드를 통해 저에 대해 알려드려요</b></strong>
-          가낟라마바사예요!
+          궁금한 키워드가 있나요?
         </h3>
         <div class="about-keyword">
-          <span>고민하는</span>
-          <span>열정적 </span>
-          <span>외유내강</span>
-          <span>긍정적</span>
-          <span>발전하는</span>
-          <span>ㅇㅇㅇㅇ</span>
-          <span>ㅇㅇㅇㅇ </span>
-          <span>협력하는</span>
-          <span>학습적</span>
-          <span>도전적</span>
-          <span>UI/ UX 디자인 과정 수료</span>
+          <a href="#my-motto">고민하는</a>
+          <a href="#passion-for-work">열정적</a>
+          <a href="#team-interviews">외유내강</a>
+          <a href="#team-interviews">긍정적</a>
+          <a href="#my-motto">발전하는</a>
+          <a href="#team-interviews">둥글둥글한</a>
+          <a href="#passion-for-work">노력하는</a>
+          <a href="#passion-for-work">협력하는</a>
+          <a href="#uiux-studies">학습적</a>
+          <a href="#passion-for-work">도전적</a>
+          <a href="#uiux-studies">UI/ UX 디자인 과정 수료</a>
         </div>
       </section>
 
-      <section class="my-motto">
+      <section id="my-motto">
         <div class="inner">
           <div class="my-motto-content">
             <div class="my-motto-title">
@@ -126,18 +126,19 @@
                 <span>발전하는</span>
               </div>
               <h3>
-                <strong><b>가나다라하는 키워드를 통해</b></strong> 가낟라마바사예요!
+                <strong><b>더 나은 디자인을 향해</b></strong
+                >고민하며 나아갑니다
               </h3>
             </div>
-            <figure><img src="./img/임시이미지.png" alt="" /></figure>
+            <figure><img src="./img/my-motto-img.png" alt="" /></figure>
           </div>
         </div>
       </section>
 
-      <section class="uiux-studies">
+      <section id="uiux-studies">
         <div class="inner">
           <div class="uiux-studies-title">
-            <h3>Lorem ipsum dolor sit amet consectetur adipisic</h3>
+            <h3><b>UI / UX 디자인 과정을 통해</b> 다양한 웹제작 경험을 해봤습니다</h3>
             <div class="about-keyword">
               <span>UI/ UX 디자인 과정 수료</span>
               <span>학습적</span>
@@ -146,54 +147,107 @@
 
           <div class="uiux-project">
             <div class="uiux-project-con">
-              <div class="project-con-title">
-                <strong> 웹디자인 </strong>
-                <p>이런 것도 해봤어요 짜라란</p>
+              <div class="con-info">
+                <strong>리디자인웹</strong>
+                <p>2023. 12. 28</p>
+                <div class="keyword-wrap">
+                  <span>임시키워드</span>
+                  <span>임시키워드</span>
+                  <span>임시키워드3</span>
+                </div>
+                <div class="more-btn-wrap">
+                  <div class="more-btn process-btn">
+                    <a>PROCESS VIEW</a>
+                  </div>
+                  <div class="more-btn design-btn" data-link="https://www.naver.com/">
+                    <a>DESIGN VIEW</a>
+                  </div>
+                </div>
               </div>
-              <figure><img src="./img/임시이미지.png" alt="" /></figure>
+              <figure><img src="./img/uiux-project-img1.png" alt="" /></figure>
             </div>
             <div class="uiux-project-con">
-              <div class="project-con-title">
-                <strong> 웹디자인 </strong>
-                <p>이런 것도 해봤어요 짜라란</p>
+              <div class="con-info">
+                <strong>반응형웹</strong>
+                <p>2023. 12. 28</p>
+                <div class="keyword-wrap">
+                  <span>임시키워드</span>
+                  <span>임시키워드</span>
+                  <span>임시키워드3</span>
+                </div>
+                <div class="more-btn-wrap">
+                  <div class="more-btn process-btn">
+                    <a>PROCESS VIEW</a>
+                  </div>
+                  <div class="more-btn design-btn" data-link="https://www.naver.com/">
+                    <a>DESIGN VIEW</a>
+                  </div>
+                </div>
               </div>
-              <figure><img src="./img/임시이미지.png" alt="" /></figure>
+              <figure><img src="./img/uiux-project-img2.png" alt="" /></figure>
             </div>
             <div class="uiux-project-con">
-              <div class="project-con-title">
-                <strong> 웹디자인 </strong>
-                <p>이런 것도 해봤어요 짜라란</p>
+              <div class="con-info">
+                <strong>앱디자인</strong>
+                <p>2023. 12. 28</p>
+                <div class="keyword-wrap">
+                  <span>임시키워드</span>
+                  <span>임시키워드</span>
+                  <span>임시키워드3</span>
+                </div>
+                <div class="more-btn-wrap">
+                  <div class="more-btn process-btn">
+                    <a>PROCESS VIEW</a>
+                  </div>
+                  <div class="more-btn design-btn" data-link="https://www.naver.com/">
+                    <a>DESIGN VIEW</a>
+                  </div>
+                </div>
               </div>
-              <figure><img src="./img/임시이미지.png" alt="" /></figure>
+              <figure><img src="./img/uiux-project-img3.png" alt="" /></figure>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="team-interviews">
+      <section id="team-interviews">
         <div class="inner">
           <div class="team-interviews-title">
             <h3>크루 인터뷰</h3>
             <div class="about-keyword">
               <span>외유내강</span>
               <span>긍정적</span>
-              <span>협력하는</span>
+              <span>둥글둥글한</span>
             </div>
           </div>
 
           <div class="interviews-content">
             <div class="interviews-text">
-              <strong>가나다라마바사 가나다라마바사 가나다라마바사!</strong>
+              <strong
+                ><b>UI/UX 공부를 함께한 </b>동료들의 목소리로<br />
+                나를 소개합니다</strong
+              >
             </div>
             <div class="interviews-slider">
               <div class="swiper">
                 <!-- Additional required wrapper -->
                 <ul class="swiper-wrapper">
                   <!-- Slides -->
-                  <li class="swiper-slide"><p>첫번째 문장이 들어가는 영역입니다.</p></li>
-                  <li class="swiper-slide"><p>두번째 문장이 들어가는 영역입니다.</p></li>
-                  <li class="swiper-slide"><p>세번째 문장이 들어가는 영역입니다.</p></li>
-                  <li class="swiper-slide"><p>네번째 문장이 들어가는 영역입니다.</p></li>
+                  <li class="swiper-slide"><p>기분 좋아지는 웃음, 상대방을 배려하는 말투, 안광이 열정 넘쳐보여</p></li>
+                  <li class="swiper-slide">
+                    <p>
+                      배우려는 자세와 도전하는 모습이 보기좋아 나날이 발전해나가는 모습보면 정말 대단하고 대견스러워
+                    </p>
+                  </li>
+                  <li class="swiper-slide">
+                    <p>유연하지만 강단있는 사람이야 자신의 장점을 잘 파악하고 피력할 줄 알아</p>
+                  </li>
+                  <li class="swiper-slide">
+                    <p>
+                      지민이는 햇살같아, 함께 있기만해도 기분이 좋아져 유들유들한 외모와 달리 자신의 의견이 뚜렷하고 또
+                      그것을 논리적으로 피력하는 모습이 멋져
+                    </p>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -201,7 +255,7 @@
         </div>
       </section>
 
-      <section class="passion-for-work">
+      <section id="passion-for-work">
         <h3 class="hidden">Lorem ipsum dolor sit amet consectetur</h3>
         <div class="about-keyword">
           <span>고민하는</span>

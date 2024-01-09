@@ -5,7 +5,7 @@ $(function () {
     yPercent: -100,
     duration: 1,
     ease: 'power4.inOut',
-    delay: 3,
+    delay: 1.4,
     onComplete: () => {
       runMatterAnimation();
     },
