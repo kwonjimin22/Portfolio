@@ -35,6 +35,7 @@ $(function () {
   });
 
   // 복제버튼 작동
+  // clipboard.js사용, 주소 : https://clipboardjs.com/
   new ClipboardJS(".btn-copy");
 
   /* ************************
