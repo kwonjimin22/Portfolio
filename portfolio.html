@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script src="./js/script.js"></script>
   </head>
 
@@ -43,11 +44,13 @@
               <div class="contact-info-wrap">
                 <div class="contact-addr">
                   <p>010-9012-4899</p>
-                  <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+                  <button class="btn-copy" data-clipboard-text="010 9012 4899"><i class="hidden">복사</i></button>
                 </div>
                 <div class="contact-addr">
                   <p>jimin00study@gmail.com</p>
-                  <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+                  <button class="btn-copy" data-clipboard-text="jimin00study@gmail.com">
+                    <i class="hidden">복사</i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -593,11 +596,11 @@
           <div class="contact-con-info">
             <div class="addr">
               <p>010 - 9012 - 4899</p>
-              <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+              <button class="btn-copy" data-clipboard-text="010 9012 4899"><i class="hidden">복사</i></button>
             </div>
             <div class="addr">
               <p>jimin00study@gmail.com</p>
-              <button type="button" class="btn-copy"><i class="hidden">복사</i></button>
+              <button class="btn-copy" data-clipboard-text="jimin00study@gmail.com"><i class="hidden">복사</i></button>
             </div>
           </div>
         </div>
