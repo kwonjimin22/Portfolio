@@ -62,9 +62,11 @@ h3 strong b {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   display: block;
-  padding: 2rem 3.2rem;
+  padding: 1.8rem 3.2rem;
+  min-width: 20rem;
   border-radius: 6rem;
   background: var(--bg-light);
 

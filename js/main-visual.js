@@ -108,10 +108,34 @@ $(function () {
     Render.run(render);
   }
 
+  const $header = $('#header');
+  const $btnTop = $('.go-top');
+
   // 메인비주얼 - 풀스크린
   $('#fullpage-container').fullpage({
     anchors: ['visual-2', 'motto', 'main-content'],
-
     scrollingSpeed: 1000,
+
+    // 영역에 로딩이 되고 나서
+    afterLoad: function (anchorLink) {
+      // console.log('로딩된 후 : ' + anchorLink, index, loadedSection);
+      // 메인비주얼에서는 안보여라
+      if (anchorLink === 'visual-2') {
+        $header.hide();
+        $btnTop.fadeOut();
+      }
+      if (anchorLink === 'motto') {
+        $header.removeClass('hide');
+        $header.show();
+        $btnTop.fadeIn();
+      }
+    },
+  });
+
+  $btnTop.on('click', function (e) {
+    e.preventDefault();
+
+    // fullpage 메서드 : 원하는 영역 이동
+    $.fn.fullpage.moveTo(1);
   });
 });

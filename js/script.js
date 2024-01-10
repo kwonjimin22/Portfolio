@@ -34,7 +34,34 @@ $(function () {
     }
   });
 
-  $btContac.on('', function () {});
+  /* ************************
+   * go-top, 상단이동버튼
+   ************************ */
+  const $btnTop = $('.go-top');
+  // 작동
+  $btnTop.on('click', function (e) {
+    e.preventDefault();
+    $('html,body').stop().animate({
+      scrollTop: 0,
+    });
+    $header.removeClass('hide');
+  });
+
+  // 평소에 숨기다가
+  $btnTop.hide();
+
+  //중간 지나야 보여지기
+  let targetPos = $window.outerHeight();
+  $window.on('scroll', function () {
+    let scrollTop = $(this).scrollTop();
+    console.log(targetPos, scrollTop);
+
+    if (scrollTop >= targetPos) {
+      $btnTop.fadeIn();
+    } else {
+      $btnTop.fadeOut();
+    }
+  });
 
   /* ************************
    * Portfolio, 탭메뉴
@@ -133,54 +160,4 @@ $(function () {
     spaceBetween: 30,
     centeredSlides: true,
   });
-
-  /* ************************
-   * ABOUT, passion-for-work-con 글자 보이기
-   ************************ */
-
-  gsap.to('#passion-for-work', {
-    scrollTrigger: {
-      trigger: '#passion-for-work',
-      pin: true,
-      start: 'top 0%',
-      end: 'bottom 0%',
-      // markers: true,
-    },
-  });
-
-  const textElements = gsap.utils.toArray('.text');
-  textElements.forEach((text) => {
-    gsap.to(text, {
-      backgroundSize: '100%',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: text,
-        start: 'top 50%',
-        end: 'bottom 0%',
-        scrub: 1,
-        // markers: true,
-      },
-    });
-  });
-
-  //  글자보이기, 순차 적용 시도
-  // for (var i = 0; i < textElements.length; i++) {
-  //   let text = textElements[i];
-  //   let delay = i * 2000;
-  //   setTimeout(() => textChange(text), delay);
-  // }
-
-  // function textChange(text) {
-  //   gsap.to(text, {
-  //     backgroundSize: '100%',
-  //     ease: 'none',
-  //     scrollTrigger: {
-  //       trigger: text,
-  //       start: 'top 50%',
-  //       end: 'bottom 0%',
-  //       scrub: 1,
-  //       markers: true,
-  //     },
-  //   });
-  // }
 });

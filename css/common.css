@@ -260,7 +260,7 @@ nav {
 
 /* s: go-top */
 .go-top {
-  opacity: 0;
+  /* display: none; */
 
   position: fixed;
   bottom: 3.2rem;
@@ -270,13 +270,6 @@ nav {
   border-radius: 50%;
   background: var(--main-color-dark) url(../img/go-top.svg) no-repeat 50%;
   box-shadow: 0px 7px 20px 0 rgba(0, 0, 0, 0.19);
-
-  transition: 0.4s;
-}
-
-.go-top.active {
-  bottom: 4.2rem;
-  opacity: 1;
 }
 /* e: go-top */
 

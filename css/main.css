@@ -163,6 +163,7 @@
   overflow: hidden;
 
   position: relative;
+  transition: 0.3s;
 }
 
 .main_content_wrap li figure {
