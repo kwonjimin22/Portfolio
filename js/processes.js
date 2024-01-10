@@ -18,24 +18,24 @@ $(function () {
       end: 'top 0',
 
       scrub: 1,
-      markers: true,
+      // markers: true,
     },
 
-    onComplete: () => {
-      gsap.to('.processes-img', {
-        width: '80%',
-        borderRadius: '50px',
-        ease: 'power4.inOut',
+    // onComplete: () => {
+    //   gsap.to('.processes-img', {
+    //     width: '80%',
+    //     borderRadius: '50px',
+    //     ease: 'power4.inOut',
 
-        scrollTrigger: {
-          trigger: '.processes-img',
-          start: 'top 10%',
-          end: 'top 0%',
+    //     scrollTrigger: {
+    //       trigger: '.processes-img',
+    //       start: '80% 10%',
+    //       end: '100% 90%',
 
-          scrub: 1,
-          markers: true,
-        },
-      });
-    },
+    //       scrub: 3,
+    //       markers: true,
+    //     },
+    //   });
+    // },
   });
 });
