@@ -36,7 +36,30 @@ $(function () {
 
   // 복제버튼 작동
   // clipboard.js사용, 주소 : https://clipboardjs.com/
-  new ClipboardJS(".btn-copy");
+
+  // new ClipboardJS(".btn-copy");
+  var clipboard = new ClipboardJS(".btn-copy");
+
+  // 복제성공
+  clipboard.on("success", function (e) {
+    e.trigger.classList.add("success");
+
+    setTimeout(function () {
+      e.trigger.classList.remove("success");
+    }, 1700);
+
+    // 사용자가 텍스트를 복사한 후에 복사된 텍스트가 선택된 상태로 남아있지 않도록 만들어줍니다.
+    e.clearSelection();
+  });
+
+  // 복제실패
+  clipboard.on("error", function (e) {
+    e.trigger.classList.add("error");
+
+    setTimeout(function () {
+      e.trigger.classList.remove("error");
+    }, 1700);
+  });
 
   /* ************************
    * go-top, 상단이동버튼
@@ -58,7 +81,7 @@ $(function () {
   let targetPos = $window.outerHeight();
   $window.on("scroll", function () {
     let scrollTop = $(this).scrollTop();
-    console.log(targetPos, scrollTop);
+    // console.log(targetPos, scrollTop);
 
     if (scrollTop >= targetPos) {
       $btnTop.fadeIn();
