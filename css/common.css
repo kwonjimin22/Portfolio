@@ -1,11 +1,11 @@
 @charset 'utf-8';
 
 /* 웹폰트 정의 */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 @font-face {
-  font-family: "Jalnan";
-  src: url("../fonts/JalnanOTF.woff2") format("woff2"), url("JalnanOTF.woff") format("woff");
+  font-family: 'Jalnan';
+  src: url('../fonts/JalnanOTF.woff2') format('woff2'), url('JalnanOTF.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -62,7 +62,7 @@ button {
 }
 
 body {
-  font: 1rem/1.5 "Montserrat", "Pretendard", sans-serif;
+  font: 1rem/1.5 'Montserrat', 'Pretendard', sans-serif;
 
   color: var(--text-color);
   /* overflow-x: hidden; */
@@ -118,7 +118,7 @@ nav {
   height: 5rem;
 }
 .logo-title p {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   line-height: 100%;
   font-weight: 400;
   font-size: 1.8rem;
@@ -153,7 +153,7 @@ nav {
   position: relative;
 }
 .gnb li.active a::after {
-  content: "";
+  content: '';
   width: 4px;
   height: 4px;
   border-radius: 50%;
@@ -216,7 +216,7 @@ nav {
   gap: 0.8rem;
 }
 .contact-name::before {
-  content: "";
+  content: '';
   display: block;
   width: 4rem;
   height: 4rem;
@@ -238,7 +238,7 @@ nav {
   margin-top: 1rem;
 }
 .contact-addr {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: 500;
   font-size: 1.8rem;
 
@@ -255,6 +255,15 @@ nav {
 
 .contact-addr .btn-copy:hover {
   background-color: #cccccc;
+}
+
+.contact-addr .btn-copy.success {
+  background-image: url(../img/btn-copy-icon-success.svg);
+  background-color: var(--bg-light);
+}
+.contact-addr .btn-copy.error {
+  background-image: url(../img/btn-copy-icon-error.svg);
+  background-color: var(--bg-light);
 }
 /* e: header */
 
@@ -313,7 +322,7 @@ nav {
   gap: 1.8rem;
 }
 .addr {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 2.2rem;
   font-weight: 700;
 
@@ -328,14 +337,17 @@ nav {
   border: 2px solid #090b2e;
   background: var(--main-color-dark) url(../img/btn-copy-icon.svg) no-repeat 50%;
 }
-.btn-copy.success {
-  background-image: url(../img/btn-copy-icon-success.svg);
-}
-.btn-copy.error {
-  background-image: url(../img/btn-copy-icon-error.svg);
-}
 
 .btn-copy:hover {
   background-color: #0f0324;
+}
+
+#footer .btn-copy.success {
+  background-image: url(../img/btn-copy-icon-success.svg);
+  background-color: var(--main-color-dark);
+}
+#footer .btn-copy.error {
+  background-image: url(../img/btn-copy-icon-error.svg);
+  background-color: var(--main-color-dark);
 }
 /* e: footer */
